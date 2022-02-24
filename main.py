@@ -15,7 +15,7 @@ bot = commands.Bot(command_prefix="-test ")
 intents = discord.Intents.default()
 intents.members = True
 
-my_secret = os.environ['token']
+token = os.environ['token']
 
 @bot.event
 async def on_ready():
