@@ -3,9 +3,17 @@
     "cogs/Changelogs.py": [
       {
         "id": "31a7a487-b186-4672-b834-9aaa9e56b4ca",
-        "line": 17,
-        "version": 918,
-        "index": 1064
+        "line": 1,
+        "version": 927,
+        "index": 15
+      }
+    ],
+    "main.py": [
+      {
+        "id": "38c73d9b-0aba-41ab-b1c1-b6021a01edc5",
+        "line": 3,
+        "version": 4806,
+        "index": 26
       }
     ]
   }

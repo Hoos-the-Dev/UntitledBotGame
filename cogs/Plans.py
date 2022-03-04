@@ -1,5 +1,5 @@
-import discord
-from discord.ext import commands
+import nextcord
+from nextcord.ext import commands
 
 class Plans(commands.Cog):
   def __init__(self, bot):
@@ -8,7 +8,7 @@ class Plans(commands.Cog):
   @commands.command()
   async def plans(self, ctx):
     ###Edit changelogs to fit the changes
-    embed = discord.Embed(title="Bot Plans :scroll:", description='Derrick has a goal and wants to work on these things.')
+    embed = nextcord.Embed(title="Bot Plans :scroll:", description='Derrick has a goal and wants to work on these things.')
     embed.set_author(name='Derrick')
     embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/759623404989972482/944494477735772180/derrick.png")
     embed.add_field(name="Migration to Nextcord", value="Discord.py has been discontinued for a bit now. pretty much hindering development in the future. Nextcord is up to date and supports new features discord has to offer. This brings us to...", inline=True)
