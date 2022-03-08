@@ -25,8 +25,8 @@ async def on_ready():
                                   url='https://twitch.tv/aurorarqg'))
     print("i am Running on " + bot.user.name)
 
-@commands.command()
-async def ping(self, ctx):
+@bot.command()
+async def ping(ctx):
   embed = nextcord.Embed(title=":ping_pong: Pong", description=f"this took {round(bot.latency*1000)}ms to send")
   await ctx.reply("")
   print("user has pinged")
