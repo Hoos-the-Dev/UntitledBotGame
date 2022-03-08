@@ -10,7 +10,7 @@ import requests
 import json
 import os
 
-bot = commands.Bot(command_prefix="-test ")
+bot = commands.Bot(command_prefix="")
 
 intents = nextcord.Intents.default()
 intents.members = True
@@ -28,7 +28,7 @@ async def on_ready():
 @bot.command()
 async def ping(ctx):
   embed = nextcord.Embed(title=":ping_pong: Pong", description=f"this took {round(bot.latency*1000)}ms to send")
-  await ctx.reply("")
+  await ctx.reply(embed=embed)
   print("user has pinged")
 
 initial_extensions = []
