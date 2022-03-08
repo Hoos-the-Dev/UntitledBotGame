@@ -15,7 +15,6 @@ bot = commands.Bot(command_prefix="-test ")
 intents = nextcord.Intents.default()
 intents.members = True
 
-token = os.environ['token']
 from apikey import BOTTOKEN
 
 @bot.event
@@ -26,6 +25,11 @@ async def on_ready():
                                   url='https://twitch.tv/aurorarqg'))
     print("i am Running on " + bot.user.name)
 
+@commands.command()
+async def ping(self, ctx):
+  embed = nextcord.Embed(title=":ping_pong: Pong", description=f"this took {round(bot.latency*1000)}ms to send")
+  await ctx.reply("")
+  print("user has pinged")
 
 initial_extensions = []
 
