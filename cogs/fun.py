@@ -35,7 +35,7 @@ class Fun(commands.Cog):
         await ctx.send(f'Delivered to {user}', delete_after=6)
 
     @commands.command()
-    async def feed fish(self, ctx):
+    async def feedfish(self, ctx):
     fish = nextcord.Embed(title="Yummy :fish:", description="You fed bingus some fish and Bingus starts to pur.")
       await ctx.reply(embed=fish)
       print("Yum")
