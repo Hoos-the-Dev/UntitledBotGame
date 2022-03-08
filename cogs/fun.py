@@ -34,12 +34,12 @@ class Fun(commands.Cog):
         await ctx.channel.purge(limit=1)
         await ctx.send(f'Delivered to {user}', delete_after=6)
 
-    @commands.command()
-    async def feedfish(self, ctx):
-      embed = nextcord.Embed(title="Yummy :fish:", description="You fed bingus some fish and Bingus starts to pur.")
-      embed.set_footer(name="Thank you for the fish. :heart:")
-      await ctx.reply(embed=embed)
-      print("Yum")
+  @commands.command()
+  async def feedfish(self, ctx):
+    embed = nextcord.Embed(title="Yummy :fish:", description="You fed bingus some fish and Bingus starts to pur.")
+    embed.set_footer(name="Thank you for the fish. :heart:")
+    await ctx.reply(embed=embed)
+    print("Yum")
 
 
     
