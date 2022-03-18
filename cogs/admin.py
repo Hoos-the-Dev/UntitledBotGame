@@ -29,7 +29,7 @@ class Admin(commands.Cog):
   @has_permissions(kick_members=True)
   async def ban(self, ctx, member: nextcord.Member, *, reason=None):
       embed = nextcord.Embed(title="Banned! :boot::boom:", description=f"{member} was banned from the discord")
-    embed.add_field(name="Reason:", value=reason)
+      embed.add_field(name="Reason:", value=reason)
       dembed = nextcord.Embed(title="You were banned fromF", description=ctx.guild.id)
       dembed.add_field(name="Banned by:", value=ctx.author)
       dembed.add_field(name="Reason:", value=reason)
