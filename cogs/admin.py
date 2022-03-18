@@ -45,7 +45,7 @@ class Admin(commands.Cog):
 
   @commands.command()
   @has_permissions(ban_members=True)
-  async def unban(self, ctx, member: nextcord.Member, *):
+  async def unban(self, ctx, *, member: nextcord.Member):
     embed = discord.Embed(title="Unbanned", description="ok i unbanned that user.")
     await member.unban
     ctx.reply(embed=embed)
