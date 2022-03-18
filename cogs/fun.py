@@ -8,8 +8,8 @@ class Fun(commands.Cog):
 
   testserverid = 937841015648292934
   
-  @nextcord.slash_command(name ="dm", description = "DM other users with the bot", guild_ids=[testserverid])
-  async def dm(self, interaction: Interaction, ctx, user: nextcord.User, *, message=None, amount=1):
+  @commands.guikd_only()
+  async def dmm(self, interaction: Interaction, ctx, user: nextcord.User, *, message=None, amount=1):
     if message == None:
         await interaction.response.send_message('You need to put a message')
     else:
@@ -23,7 +23,7 @@ class Fun(commands.Cog):
   async def test(self, interaction: Interaction):
     await interaction.response.send_message('Je mappelle Bot')
   
-  @commands.command()
+  @commands.guild_only()
   async def anondm(self, ctx, user: nextcord.User, *, message=None, amount=1):
     if message == None:
         await ctx.send('You need to put a message')

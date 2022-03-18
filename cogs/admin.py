@@ -30,7 +30,7 @@ class Admin(commands.Cog):
   async def ban(self, ctx, member: nextcord.Member, *, reason=None):
       embed = nextcord.Embed(title="Banned! :boot::boom:", description=f"{member} was banned from the discord")
       embed.add_field(name="Reason:", value=reason)
-      dembed = nextcord.Embed(title="Uh Oh...", description=f'You were banned from **{ctx.guild.name}**')
+      dembed = nextcord.Embed(title="Uh Oh...", description=f'You were banned from **{ctx.guild.name}')
       dembed.add_field(name="Banned by:", value=ctx.author)
       dembed.add_field(name="Reason:", value=reason)
       await member.send(embed=dembed)
@@ -42,13 +42,6 @@ class Admin(commands.Cog):
       if isinstance(error, commands.MissingPermissions):
         banerror = nextcord.Embed(title="Missing Permission :x:", description="You dont have the permissions to ban members!")
       await ctx.reply(embed=banerror, delete_after=5)
-
-  @commands.command()
-  @has_permissions(ban_members=True)
-  async def unban(self, ctx, *, member: nextcord.Member):
-    embed = discord.Embed(title="Unbanned", description="ok i unbanned that user.")
-    await member.unban
-    ctx.reply(embed=embed)
 
   @commands.command()
   @has_permissions(manage_messages=True)
