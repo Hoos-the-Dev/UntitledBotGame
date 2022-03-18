@@ -43,6 +43,12 @@ class Admin(commands.Cog):
         banerror = nextcord.Embed(title="Missing Permission :x:", description="You dont have the permissions to ban members!")
       await ctx.reply(embed=banerror, delete_after=5)
 
+  @commands.command()
+  @has_permissions(ban_members=True)
+  async def unban(self, ctx, member: nextcord.Member, *):
+    embed = discord.Embed(title="Unbanned", description="ok i unbanned that user.")
+    await member.unban
+    ctx.reply(embed=embed)
 
   @commands.command()
   @has_permissions(manage_messages=True)
