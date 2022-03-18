@@ -28,10 +28,6 @@ class Admin(commands.Cog):
   @commands.command()
   @has_permissions(kick_members=True)
   async def ban(self, ctx, member: nextcord.Member, user: nextcord.User, *, reason=None):
-    if member == None:
-      rembed = nextcord.Embed(title="???", description="You gotta say who tf you're trying to ban. Dumbass.")
-      ctx.reply(embed=rembed)
-    else:
       embed = nextcord.Embed(title="Banned! :boot::boom:", description=f"{member} was banned from the discord")
       dembed = nextcord.Embed(title="You were banned from", description="Insane Asylum")
       dembed.add_field(name="Banned by", value=ctx.Author)
