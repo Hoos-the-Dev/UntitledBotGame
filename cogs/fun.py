@@ -8,10 +8,10 @@ class Fun(commands.Cog):
 
   testserverid = 937841015648292934
   
-  @commands.guikd_only()
-  async def dmm(self, interaction: Interaction, ctx, user: nextcord.User, *, message=None, amount=1):
+  @commands.guild_only()
+  async def dm(self, interaction: Interaction, ctx, user: nextcord.User, *, message=None, amount=1):
     if message == None:
-        await interaction.response.send_message('You need to put a message')
+        await ctx.reply('You need to put a message. but ')
     else:
         embed = nextcord.Embed(title="You got mail :incoming_envelope:", description=message)
         embed.add_field(name="Sent by", value=ctx.author)
