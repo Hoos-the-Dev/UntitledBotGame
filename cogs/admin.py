@@ -26,11 +26,8 @@ class Admin(commands.Cog):
 
 
   @commands.command()
-  @has_permissions(kick_members=True)
+  @has_permissions(ban_members=True)
   async def ban(self, ctx, member: nextcord.Member, *, reason=None):
-    if member == None:
-      await ctx.reply("You need to provide a user to ban. dumbass")
-    else:
       embed = nextcord.Embed(title="Banned! :boot::boom:", description=f"{member} was banned from the discord")
       embed.add_field(name="Reason:", value=reason)
       dembed = nextcord.Embed(title="Uh Oh...", description=f'You were banned from **{ctx.guild.name}')
