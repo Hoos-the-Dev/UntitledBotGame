@@ -7,6 +7,12 @@ class Fun(commands.Cog):
       self.bot = bot
 
   testserverid = 937841015648292934
+
+  @command.error
+  async def invalidcommand_error(self, ctx, error):
+    if isinstance(error, commands.MissingRequiredArgument):
+      embed = nextcord.embed(title="?????", description="Bro that isnt even a real command. Use -help for a list of shit that actually works")
+  
   
   @commands.command()
   @commands.guild_only()  
