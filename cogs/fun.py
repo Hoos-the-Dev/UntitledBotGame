@@ -13,11 +13,12 @@ class Fun(commands.Cog):
   async def dm(self, ctx, user: nextcord.User, *, message=None, amount=1):
     if message == None:
       await ctx.reply(f"You need to give me a message to send to {user}. But you should've known that already. dumbass")
-    embed = nextcord.Embed(title="You got mail :incoming_envelope:", description=message)
-    embed.add_field(name="Sent by", value=ctx.author)
-    await user.send(embed=embed)
-    await ctx.channel.purge(limit=1)
-    await ctx.send(f'Delivered to {user}', delete_after=6)
+    else:
+      embed = nextcord.Embed(title="You got mail :incoming_envelope:", description=message)
+      embed.add_field(name="Sent by", value=ctx.author)
+      await user.send(embed=embed)
+      await ctx.channel.purge(limit=1)
+      await ctx.send(f'Delivered to {user}', delete_after=6)
   
   @dm.error
   async def dm_error(self, ctx, error):
