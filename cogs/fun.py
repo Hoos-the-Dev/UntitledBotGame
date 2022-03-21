@@ -47,13 +47,13 @@ class Fun(commands.Cog):
   @dm.error
   async def dm_error(self, ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
-      await ctx.reply("You need to put a message to send. but you should've known that already dumbass")
+      await ctx.reply("You need to put a message to send. but that should've been a given")
   
   
   @dm.error
   async def validuser_error(self, ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
-      await ctx.reply("You need to say a valid user to dm. but i thought that was obvious")
+      await ctx.reply("You need to say a valid user to dm. but i assumed that you knew that already")
 
   @commands.command()
   async def feedfish(self, ctx):
