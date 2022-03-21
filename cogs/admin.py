@@ -37,7 +37,11 @@ class Admin(commands.Cog):
       await member.ban(reason=reason)
       await ctx.reply(embed=embed)
 
-
+  @ban.error
+  async def ban_error(self, ctx, error):
+      if isinstance(error, commands.MissingPermissions):
+        banerror = nextcord.Embed(title="Missing Permission :x:", description="You dont have the permissions to ban members!")
+      await ctx.reply(embed=banerror)
 
   @commands.command()
   @has_permissions(manage_messages=True)
