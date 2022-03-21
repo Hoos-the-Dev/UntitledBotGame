@@ -8,7 +8,7 @@ class Fun(commands.Cog):
 
   testserverid = 937841015648292934
 
-  @command.error
+  @commands.error
   async def invalidcommand_error(self, ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
       embed = nextcord.embed(title="?????", description="Bro that isnt even a real command. Use -help for a list of shit that actually works")
