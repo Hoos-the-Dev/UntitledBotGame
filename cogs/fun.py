@@ -34,11 +34,14 @@ class Fun(commands.Cog):
   @commands.command()
   @commands.guild_only()
   async def anondm(self, ctx, user: nextcord.User, *, message=None, amount=1):
-    embed = nextcord.Embed(title="You got mail :incoming_envelope:", description=message)
-    embed.add_field(name="Sent by", value="Bingus")
-    await user.send(embed=embed)
-    await ctx.channel.purge(limit=1)
-    await ctx.send(f'Delivered to {user}', delete_after=6)
+    if message == None:
+      await ctx.reply(f"You need to give me a message to send to {user}. But you should've known that already. dumbass")
+    else:
+      embed = nextcord.Embed(title="You got mail :incoming_envelope:", description=message)
+      embed.add_field(name="Sent by", value="Bingus")
+      await user.send(embed=embed)
+      await ctx.channel.purge(limit=1)
+      await ctx.send(f'Delivered to {user}', delete_after=6)
 
   @anondm.error
   async def dm_error(self, ctx, error):
