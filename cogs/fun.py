@@ -10,9 +10,9 @@ class Fun(commands.Cog):
   
   @commands.command()
   @commands.guild_only()  
-  async def dm(self, interaction: Interaction, ctx, user: nextcord.User, *, message=None, amount=1):
+  async def dm(self, ctx, user: nextcord.User, *, message=None, amount=1):
     if message == None:
-        await ctx.reply('You need to put a message. but ')
+        await ctx.reply('You need to put a message. but you should know that already. ')
     else:
         embed = nextcord.Embed(title="You got mail :incoming_envelope:", description=message)
         embed.add_field(name="Sent by", value=ctx.author)
