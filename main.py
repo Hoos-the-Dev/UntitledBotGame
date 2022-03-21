@@ -10,7 +10,7 @@ import requests
 import json
 import os
 
-bot = commands.Bot(command_prefix="")
+bot = commands.Bot(command_prefix="-")
 
 intents = nextcord.Intents.default()
 intents.members = True
