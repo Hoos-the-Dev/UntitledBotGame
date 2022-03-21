@@ -21,15 +21,13 @@ class Fun(commands.Cog):
         await ctx.send(f'Delivered to {user}', delete_after=6)
   @dm.error
   async def dm_error(self, ctx, error):
-      if isinstance(error, commands.MissingRequiredArgument):
+    if isinstance(error, commands.MissingRequiredArgument):
       ctx.reply("You need to put a message to send. but you should've known that already dumbass")
   @dm_error
   async def validuser_error(self, ctx, error):
-      if isinstance(error, commands.MissingRequiredArgument):
+    if isinstance(error, commands.MissingRequiredArgument):
       ctx.reply("You need to say a valid user to dm. but i thought that was obvious")
-  
-  
-        
+          
   @commands.command()
   @commands.guild_only()
   async def anondm(self, ctx, user: nextcord.User, *, message=None, amount=1):
@@ -41,6 +39,15 @@ class Fun(commands.Cog):
         await user.send(embed=embed)
         await ctx.channel.purge(limit=1)
         await ctx.send(f'Delivered to {user}', delete_after=6)
+
+  @dm.error
+  async def dm_error(self, ctx, error):
+    if isinstance(error, commands.MissingRequiredArgument):
+      ctx.reply("You need to put a message to send. but you should've known that already dumbass")
+  @dm_error
+  async def validuser_error(self, ctx, error):
+    if isinstance(error, commands.MissingRequiredArgument):
+      ctx.reply("You need to say a valid user to dm. but i thought that was obvious")
 
   @commands.command()
   async def feedfish(self, ctx):
