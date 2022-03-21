@@ -43,5 +43,10 @@ if __name__ == '__main__':
     for extension in initial_extensions:
       bot.load_extension(extension)
 
+@bot.event
+async def on_command_error(ctx, error):
+  if isinstance(error, commands.CommandNotFound)
+  embed = nextcord.Embed(title="???", description="The Command that you just tried to do doesnt even exist... Use -help for a list of commands that actually work instead of shit that doesnt.")
+
       
 bot.run(BOTTOKEN)
