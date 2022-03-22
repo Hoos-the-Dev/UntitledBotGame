@@ -21,7 +21,7 @@ class Roles(commands.Cog):
   def __init__(self, bot):
       self.bot = bot
 
-  @commands.command()
+ # @commands.command()
   async def bingusupdates(self, ctx):
     view = BotUpdates()
     await ctx.channel.purge(limit=1)
