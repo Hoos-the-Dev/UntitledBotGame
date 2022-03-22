@@ -1,5 +1,6 @@
 import nextcord
 from nextcord.ext import commands
+from nextcord import Interaction
 
 class BotUpdates(nextcord.ui.View):
   def __init__(self):
