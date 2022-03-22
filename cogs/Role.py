@@ -7,7 +7,7 @@ class BotUpdates(nextcord.ui.View):
     self.value = None
 
   @nextcord.ui.button(label = "✔️", style=nextcord.ButtonStyle.blurple)
- async def update(self, button: nextcord.ui.Button, interaction: Interaction):
+  async def update(self, button: nextcord.ui.Button, interaction: Interaction):
     guild = discord.utils.find(lambda g: g.id == payload.guild_id, bot.guilds)
         role = discord.utils.get(guild.roles, name="Bingus Updates")
         if role is not None:
