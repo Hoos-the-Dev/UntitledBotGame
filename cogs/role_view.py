@@ -30,11 +30,5 @@ class RoleView(nextcord.ui.View):
                 f"You have been given the {button.label} role", ephemeral=True
             )
 
-    @nextcord.ui.button(
-        label="Updates",
-        emoji="✔️",
-        style=nextcord.ButtonStyle.primary,
-        # set custom id to be the bot name : the class name : the role id
-        custom_id=custom_id(VIEW_NAME, config.SUBSCRIBER_ROLE_ID),
-    )
+    @nextcord.ui.button(label="Updates", emoji="✔️", style=nextcord.ButtonStyle.primary, custom_id=custom_id(VIEW_NAME, config.SUBSCRIBER_ROLE_ID),)
   
