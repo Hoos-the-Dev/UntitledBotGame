@@ -9,10 +9,10 @@ class BotUpdates(nextcord.ui.View):
 
   @nextcord.ui.button(label = "✔️", style=nextcord.ButtonStyle.blurple)
   async def update(self, button: nextcord.ui.Button, interaction: Interaction):
-    guild = discord.utils.find(lambda g: g.id == payload.guild_id, bot.guilds)
-    role = discord.utils.get(guild.roles, name="Bingus Updates")
+    guild = nextcord.utils.find(lambda g: g.id == payload.guild_id, bot.guilds)
+    role = nextcord.utils.get(guild.roles, name="Bingus Updates")
     if role is not None:
-      member = discord.utils.find(lambda m: m.id == payload.user_id, guild.members)
+      member = nextcord.utils.find(lambda m: m.id == payload.user_id, guild.members)
       if member is not None:
         await member.add_roles(role)
         await interaction.response.send_message('You will now be alerted', ephemeral=True)
