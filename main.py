@@ -47,7 +47,7 @@ class BotUpdates(nextcord.ui.View):
         await member.add_roles(role)
         await interaction.response.send_message('You will now be alerted for Bot Updates', ephemeral=True)
 
-@commands.command()
+@bot.command()
 async def bingusupdates(ctx):
   view = BotUpdates()
   await ctx.channel.purge(limit=1)
