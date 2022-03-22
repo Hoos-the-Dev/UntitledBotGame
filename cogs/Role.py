@@ -25,7 +25,7 @@ class Roles(commands.Cog):
   async def bingusupdates(self, ctx):
     view = BotUpdates()
     await ctx.channel.purge(limit=1)
-    await ctx.send('If you want to get pinged for updates with bingus bot. Click the button below.')
+    await ctx.send('If you want to get pinged for updates with bingus bot. Click the button below.', view=view)
     await view.wait()
 
 
