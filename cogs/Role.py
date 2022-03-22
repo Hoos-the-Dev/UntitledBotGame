@@ -15,7 +15,6 @@ class BotUpdates(nextcord.ui.View):
       if member is not None:
         await member.add_roles(role)
         await interaction.response.send_message('You will now be alerted', ephemeral=True)
-   self.value = True
 
 class Roles(commands.Cog):
   def __init__(self, bot):
