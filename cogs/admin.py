@@ -17,6 +17,12 @@ class Admin(commands.Cog):
       await member.kick(reason=reason)
       await ctx.reply(embed=embed)
 
+  @commands.command()
+  @command.is_owner()
+  async def BingusUpdates(self, ctx):
+    await ctx.channel.purge(limit=1)
+    await ctx.send("If you want to get updates on what happens with Bingus. @ <@164061868741099520> saying that you want the role. Can't be asked to setup reaction roles or button roles and its honestly a pain in the BinusASS.")
+  
 
   @kick.error
   async def kick_error(self, ctx, error):
