@@ -32,28 +32,6 @@ async def ping(ctx):
   await ctx.reply(embed=embed)
   print("user has pinged")
 
-class BotUpdates(nextcord.ui.View):
-  def __init__():
-    super().__init__()
-    self.value = None
-
-  @nextcord.ui.button(label = "✔️", style=nextcord.ButtonStyle.blurple)
-  async def update(self, button: nextcord.ui.Button, interaction: Interaction):
-    guild = nextcord.utils.find(lambda g: g.id == payload.guild_id, bot.guilds)
-    role = nextcord.utils.get(guild.roles, name="Bingus Updates")
-    if role is not None:
-      member = nextcord.utils.find(lambda m: m.id == payload.user_id, guild.members)
-      if member is not None:
-        await member.add_roles(role)
-        await interaction.response.send_message('You will now be alerted for Bot Updates', ephemeral=True)
-
-@bot.command()
-async def bingusupdates(ctx):
-  view = BotUpdates()
-  await ctx.channel.purge(limit=1)
-  await ctx.send('If you want to get pinged for updates with bingus bot. Click the button below.', view=view)
-  await view.wait()
-
 initial_extensions = []
 
 for filename in os.listdir('./cogs'):
