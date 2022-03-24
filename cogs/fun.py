@@ -67,7 +67,7 @@ class Fun(commands.Cog):
     async with aiohttp.ClientSession() as cd:
       async with cd.get("https://www.reddit.com/r/animememes.json") as r:
         animememes = await r.json()
-        embed = nextcord.Embed(color=nextcord.Color.random()
+        embed = nextcord.Embed(color=nextcord.Color.random())
         embed.set_image(url=animememes["data"]["children"][random.randit(0, 30)]["data"]["url"])
         embed.set_footer("fucking weeb")
         await ctx.reply(embed=embed)
