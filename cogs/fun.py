@@ -1,6 +1,7 @@
 import nextcord
 from nextcord.ext import commands
 from nextcord import Interaction
+import aiohttp
 
 class Fun(commands.Cog):
   def __init__(self, bot):
@@ -60,6 +61,17 @@ class Fun(commands.Cog):
     embed.set_footer(text="Thank you for the fish. ❤️")
     await ctx.reply(embed=embed)
     print("Yum")
+
+  @commands.command()
+  async def animeme(self, ctx):
+    async with aiohttp.ClientSession() as cd:
+      async with cd.get("https://www.reddit.com/r/animememes.json") as r:
+        animememes = await r.json()
+        embed = nextcord.Embed(title="Here ya go bud", description="heres an anime meme ig", color=nextcord.Color.random())
+        embed.set_image(url=animememes["data"]["children"][random.randit(0, 30)]["data"]["url"])
+        embed.set_footer("fucking weeb")
+    await ctx.reply(embed=embed)
+  
 
 
     
