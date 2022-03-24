@@ -70,7 +70,7 @@ class Fun(commands.Cog):
         embed = nextcord.Embed(title="Here ya go bud", description="heres an anime meme ig", color=nextcord.Color.random())
         embed.set_image(url=animememes["data"]["children"][random.randit(0, 30)]["data"]["url"])
         embed.set_footer("fucking weeb")
-    await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed)
   
 
 

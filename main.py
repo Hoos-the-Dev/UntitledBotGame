@@ -10,6 +10,7 @@ import requests
 import json
 import os
 from nextcord import Interaction
+import aiohttp
 
 bot = commands.Bot(command_prefix="-")
 
