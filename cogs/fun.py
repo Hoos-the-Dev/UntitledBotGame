@@ -1,6 +1,12 @@
 import nextcord
 from nextcord.ext import commands
 from nextcord import Interaction
+from urllib import response
+from nextcord import Member
+from nextcord.ext import commands
+import asyncio
+import requests
+import random
 import aiohttp
 
 class Fun(commands.Cog):
@@ -64,15 +70,13 @@ class Fun(commands.Cog):
 
   @commands.command()
   async def animeme(self, ctx):
-    async with aiohttp.ClientSession() as cd:
-      async with cd.get("https://www.reddit.com/r/animememes.json") as r:
-        animememes = await r.json()
-        embed = nextcord.Embed(color=nextcord.Color.random())
-        embed.set_image(url=animememes["data"]["children"][random.randit(0, 30)]["data"]["url"])
-        embed.set_footer("fucking weeb")
-        await ctx.reply(embed=embed)
-  
-
+      async with aiohttp.ClientSession() as cd:
+          async with cd.get("https://www.reddit.com/r/animememes.json") as r:
+              animememes = await r.json()
+              embed = nextcord.Embed(title="here..", description="idk why u wanted this but ok", color=nextcord.Color.random())
+              embed.set_image(url=animememes["data"]["children"][random.randint(0, 30)]["data"]["url"])
+              embed.set_footer(text="fucking weeb")
+              await ctx.reply(embed=embed)
 
     
 def setup(bot):
