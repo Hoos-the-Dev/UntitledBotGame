@@ -78,6 +78,15 @@ class Fun(commands.Cog):
               embed.set_footer(text="fucking weeb")
               await ctx.reply(embed=embed)
 
+  @commands.command()
+  async def Rel(self, ctx):
+      async with aiohttp.ClientSession() as cd:
+          async with cd.get("https://www.reddit.com/user/Relevred.json") as r:
+              animememes = await r.json()
+              embed = nextcord.Embed(title="Here ya go", description="take this. might be interesting", color=nextcord.Color.random())
+              embed.set_image(url=animememes["data"]["children"][random.randint(0, 30)]["data"]["url"])
+              embed.set_footer(text="taken straight from the Relevred reddit")
+              await ctx.reply(embed=embed)
     
 def setup(bot):
     bot.add_cog(Fun(bot))
