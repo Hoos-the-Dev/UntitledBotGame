@@ -12,7 +12,7 @@ import os
 from nextcord import Interaction
 import aiohttp
 
-bot = commands.Bot(command_prefix="-")
+bot = commands.Bot(command_prefix="-", case_insensitive=True)
 
 intents = nextcord.Intents.default()
 intents.members = True

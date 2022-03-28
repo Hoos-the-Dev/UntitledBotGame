@@ -11,9 +11,9 @@
     "cogs/fun.py": [
       {
         "id": "7a17f7e6-3c3e-4f48-9eed-26e8ef249968",
-        "line": 14,
-        "version": 3003,
-        "index": 337
+        "line": 20,
+        "version": 3068,
+        "index": 472
       }
     ],
     "main.py": [
