@@ -31,7 +31,6 @@ async def on_ready():
 async def ping(ctx):
   embed = nextcord.Embed(title=":ping_pong: Pong", description=f"this took {round(bot.latency*1000)}ms to send")
   await ctx.reply(embed=embed)
-  print("user has pinged")
 
 initial_extensions = []
 
