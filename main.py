@@ -23,7 +23,7 @@ from apikey import BOTTOKEN
 async def on_ready():
     await bot.change_presence(status=nextcord.Status.do_not_disturb,
                               activity=nextcord.Streaming(
-                                  name='Security Cam footage',
+                                  name='Dank Memers Source Code',
                                   url='https://twitch.tv/aurorarqg'))
     print("i am Running on " + bot.user.name)
 
